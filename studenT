@@ -1,0 +1,52 @@
+class Student {
+    protected String studentName;
+    protected int academicScore;
+
+    public Student(String studentName, int academicScore) {
+        this.studentName = studentName;
+        this.academicScore = academicScore;
+        // this.sportsScore = sportsScore;
+    }
+
+    public void displayAcademicScore() {
+        System.out.println("Academic Score of: " + studentName + ":" + academicScore);
+    }
+}
+class Sports{
+    protected int sportsScore;
+
+    public Sports(int sportsScore){
+        this.sportsScore = sportsScore;
+    }
+    public void displaySportsScore(){
+        System.out.println("Sports Score: "+ sportsScore);
+    }
+}
+class Result extends Student {
+    private Sports sports;
+
+    public Result(String studentName, int academicScore, int sportsScore){
+        super(studentName, academicScore);
+        this.sports = new Sports(sportsScore);
+    }
+    public void displayScores(){
+        super.displayAcademicScore();
+        sports.displaySportsScore();
+    }
+}
+class Output{
+    public static void main(String[] args){
+        Result result = new Result("John",85,90);
+        result.displayScores();
+    }
+}
+
+
+
+OUTPUT:
+
+C:\Users\mlm\.jdks\openjdk-21.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=51827:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\mlm\IdeaProjects\untitled\out\production\untitled Output
+Academic Score of: John:85
+Sports Score: 90
+
+Process finished with exit code 0
