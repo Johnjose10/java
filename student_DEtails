@@ -1,0 +1,51 @@
+class Stud_details
+{
+    int r;
+    String n;
+    void std(int roll,String name)
+    {
+        r=roll;
+        n=name;
+        System.out.println("Roll no: "+r+" Name: "+n);
+    }
+}
+class Marks extends Stud_details
+{
+    int m1,m2,m3;
+    void mark(int mark1,int mark2,int mark3)
+    {
+        m1=mark1;
+        m2=mark2;
+        m3=mark3;
+        System.out.println("Mark1= "+m1+" Mark2= "+m2+" Mark3= "+m3);
+    }
+}
+class Total extends Marks
+{
+    int t;
+    void getTotal()
+    {
+        t=m1+m2+m3;
+        System.out.println("Total marks = "+t);
+    }
+}
+class StdDemo
+{
+    public static void main(String args[])
+    {
+        Total s= new Total();
+        s.std(101,"Nidhi");
+        s.mark(70,80,85);
+        s.getTotal();
+    }
+}
+
+
+OUTPUT:
+
+C:\Users\mlm\.jdks\openjdk-21.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=52820:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\mlm\IdeaProjects\untitled\out\production\untitled StdDemo
+Roll no: 101 Name: Nidhi
+Mark1= 70 Mark2= 80 Mark3= 85
+Total marks = 235
+
+Process finished with exit code 0
