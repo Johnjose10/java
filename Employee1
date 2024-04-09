@@ -1,0 +1,121 @@
+import java.util.*;
+class Employee
+{
+    int empid,salary;
+    String name,address;
+
+    Employee(int e,String n,int s,String a)
+    {
+        empid=e;
+        name=n;
+        salary=s;
+        address=a;
+    }
+}
+class Teacher extends Employee
+{
+    String department, subject;
+
+    Teacher(int e,String n,int s,String a,String d,String sub)
+    {
+        super(e,n,s,a);
+        department=d;
+        subject=sub;
+    }
+    void display()
+    {
+        System.out.println("ID: "+empid);
+        System.out.println("Name: "+name);
+        System.out.println("Salary: "+salary);
+        System.out.println("Address: "+address);
+ System.out.println("Department: "+department);
+        System.out.println("Subject: "+subject);
+    }
+}
+class arrayObject
+{
+    public static void main(String args[])
+    {
+        Scanner s = new Scanner(System.in);
+        Teacher T[] = new Teacher[5];
+        int num,id,sal;
+        String empname,empadd,empdept,empsub;
+        System.out.println("Enter number of employees: ");
+        num=s.nextInt();
+        for(int i=0;i<num;i++)
+        {
+            System.out.println("Enter employee ID: ");
+            id=s.nextInt();
+            s.nextLine();
+
+            System.out.println("Enter employee name: ");
+            empname=s.nextLine();
+
+            System.out.println("Enter employee salary: ");
+            sal=s.nextInt();
+            s.nextLine();
+
+            System.out.println("Enter employee address: ");
+            empadd=s.nextLine();
+
+            System.out.println("Enter employee department: ");
+            empdept=s.nextLine();
+
+            System.out.println("Enter employee subject: ");
+            empsub=s.nextLine();
+
+            T[i] = new Teacher(id,empname,sal,empadd,empdept,empsub);
+        }
+        for(int i=0;i<num;i++)
+        {
+            T[i].display();
+        }
+
+    }
+}
+
+
+
+****OUTPUT***
+
+C:\Users\mlm\.jdks\openjdk-21.0.2\bin\java.exe "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\lib\idea_rt.jar=52841:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.3\bin" -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 -classpath C:\Users\mlm\IdeaProjects\untitled\out\production\untitled arrayObject
+Enter number of employees: 
+2
+Enter employee ID: 
+100
+Enter employee name: 
+John
+Enter employee salary: 
+25000
+Enter employee address: 
+kottayam
+Enter employee department: 
+HR
+Enter employee subject: 
+Maths
+Enter employee ID: 
+101
+Enter employee name: 
+Arjun
+Enter employee salary: 
+23000
+Enter employee address: 
+Alappuzha
+Enter employee department: 
+CS
+Enter employee subject: 
+Science
+ID: 100
+Name: John
+Salary: 25000
+Address: kottayam
+Department: HR
+Subject: Maths
+ID: 101
+Name: Arjun
+Salary: 23000
+Address: Alappuzha
+Department: CS
+Subject: Science
+
+Process finished with exit code 0
