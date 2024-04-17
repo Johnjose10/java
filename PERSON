@@ -1,0 +1,151 @@
+import java.util.Scanner;
+class Person {
+    protected String name;
+    protected String gender;
+    protected String address;
+    protected int age;
+    public Person(String name, String gender, String address, int age) {
+        name = name;
+        gender = gender;
+        address = address;
+        age = age;
+    }
+    public void display() {
+        System.out.println("Name: " + name);
+
+
+
+        System.out.println("Gender: " + gender);
+        System.out.println("Address: " + address);
+        System.out.println("Age: " + age);
+    }
+}
+class Employee extends Person {
+    protected int empid;
+    protected String companyName;
+    protected String qualification;
+    protected double salary;
+    public Employee(String name, String gender, String address, int age, int empid, String companyName, String qualification, double salary) {
+        super(name, gender, address, age);
+        empid = empid;
+        companyName = companyName;
+        qualification = qualification;
+        salary = salary;
+    }
+    public void display() {
+        super.display();
+        System.out.println("Employee ID: " + empid);
+
+
+
+
+        System.out.println("Company Name: " + companyName);
+        System.out.println("Qualification: " + qualification);
+        System.out.println("Salary: " + salary);
+    }
+}
+class Teacher extends Employee {
+    protected String subject;
+    protected String department;
+    protected int teacherId;
+    public Teacher(String name, String gender, String address, int age, int empid, String companyName, String qualification, double salary, String subject, String department, int teacherId) {
+        super(name, gender, address, age, empid, companyName, qualification, salary);
+        subject = subject;
+        department = department;
+        teacherId = teacherId;
+    }
+    public void display() {
+        super.display();
+        System.out.println("Subject: " + subject);
+        System.out.println("Department: " + department);
+
+
+
+
+        System.out.println("Teacher ID: " + teacherId);
+    }
+}
+ class TeacherManagementSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of teachers (N): ");
+        int n = scanner.nextInt();
+        Teacher[] teachers = new Teacher[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("Enter details for Teacher #" + (i + 1));
+            scanner.nextLine();
+            System.out.print("Name: ");
+            String name = scanner.nextLine();
+            System.out.print("Gender: ");
+            String gender = scanner.nextLine();
+            System.out.print("Address: ");
+            String address = scanner.nextLine();
+            System.out.print("Age: ");
+            int age = scanner.nextInt();
+
+
+
+
+            System.out.print("Employee ID: ");
+            int empid = scanner.nextInt();
+            scanner.nextLine();
+            System.out.print("Company Name: ");
+            String companyName = scanner.nextLine();
+            System.out.print("Qualification: ");
+            String qualification = scanner.nextLine();
+            System.out.print("Salary: ");
+            double salary = scanner.nextDouble();
+            scanner.nextLine();
+            System.out.print("Subject: ");
+            String subject = scanner.nextLine();
+            System.out.print("Department: ");
+            String department = scanner.nextLine();
+            System.out.print("Teacher ID: ");
+            int teacherId = scanner.nextInt();
+            teachers[i] = new Teacher(name, gender, address, age, empid, companyName,     qualification, salary, subject, department, teacherId);
+        }
+        System.out.println("\nDetails of Teachers:");
+        for (int i = 0; i < n; i++) {
+
+
+
+
+            System.out.println("\nTeacher #" + (i + 1));
+            teachers[i].display();
+        }
+    }
+}
+
+
+******OUTPUT*******
+
+Enter the number of teachers (N): 1
+Enter details for Teacher #1
+Name: aswini 
+Gender: female
+Address: mangalam
+Age: 50
+Employee ID: 103
+Company Name: tcs
+Qualification: mtech
+Salary: 35000
+Subject: operating system
+Department: mca
+Teacher ID: 101
+
+Details of Teachers:
+
+Teacher #1
+Name: null
+Gender: null
+Address: null
+Age: 0
+Employee ID: 0
+Company Name: null
+Qualification: null
+Salary: 0.0
+Subject: null
+Department: null
+Teacher ID: 0
+
+Process finished with exit code 0
